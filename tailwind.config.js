@@ -3,7 +3,7 @@ export default {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     screens: {
-      sm: '480px',
+      sm: '350px',
       md: '768px',
       lg: '976px',
       xl: '1440px',
@@ -19,10 +19,11 @@ export default {
         },
         stroke: {
           1: "#30324B",
-          2: "#6AD400",
-          3: "#CEFF9D",
-          4: "#FF2F2F",
-          5: "#FFB8B8",
+          2: "#575A84",
+          3: "#6AD400",
+          4: "#CEFF9D",
+          5: "#FF2F2F",
+          6: "#FFB8B8",
         },
         n: {
           1: "#A4A4A4",
