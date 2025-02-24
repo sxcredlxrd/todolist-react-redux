@@ -8,7 +8,15 @@ import {Pencil} from "lucide-react";
 
 const Task = ({tasks}) => {
 
-    const [open, setOpen] = useState(false);
+    const [openTaskId, setOpenTaskId] = useState(null);
+
+    const handleOpenModal = (taskId) => {
+        setOpenTaskId(taskId);
+    };
+
+    const handleCloseModal = () => {
+        setOpenTaskId(null);
+    };
 
     return (
         <>
@@ -21,10 +29,12 @@ const Task = ({tasks}) => {
                         <Toggle id={task.id} status={task.status} text={task.text}/>
                     </div>
                     <div className="flex justify-end gap-2">
-                        <Button onClick={() => setOpen(!open)}>
+                        <Button onClick={() => handleOpenModal(task.id)}>
                             <Icon IconComponent={Pencil} size={24} color="#30324B"/>
                         </Button>
-                        <RenameModal task={task} onClose={() => setOpen(false)} open={open}/>
+                        {openTaskId === task.id && (
+                            <RenameModal task={task} onClose={handleCloseModal} open={true} />
+                        )}
                         <Remove id={task.id}/>
                     </div>
                 </div>

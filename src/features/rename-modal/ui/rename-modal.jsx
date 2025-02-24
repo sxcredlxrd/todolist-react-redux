@@ -9,7 +9,7 @@ const RenameModal = ({task, onClose, open}) => {
     const [updateValue, setUpdateValue] = useState(task.text || "");
 
     return (
-        <div onClick={onClose} className={`fixed inset-0 top-[0px] left-[0px] xl:px-[100px] lg:px-[75px] md:px-[50px] sm:px-[20px] xl:w-full lg:w-full md:w-full sm:w-full h-full flex justify-center items-center transition-colors ${open ? 'visible bg-black/20' : 'invisible'}`}>
+        <div key={task.id} onClick={onClose} className={`fixed inset-0 top-[0px] left-[0px] xl:px-[100px] lg:px-[75px] md:px-[50px] sm:px-[20px] xl:w-full lg:w-full md:w-full sm:w-full h-full flex justify-center items-center transition-colors ${open ? 'visible bg-black/20' : 'invisible'}`}>
             <div onClick={(e) => e.stopPropagation()} className="flex flex-col gap-[15px] bg-color-5 shadow-md rounded-[20px] xl:w-full lg:w-full md:w-full sm:w-full py-[20px] px-[20px]">
                 <div>
                     <h1 className="text-color-1 font-bold text-[20px]">Сегодня</h1>
